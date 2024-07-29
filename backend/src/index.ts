@@ -12,7 +12,11 @@ const PORT = process.env.PORT;
 
 // Init Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://book-nest-s5d1.vercel.app/',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // Middleware
 app.use(express.json());
