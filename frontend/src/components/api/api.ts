@@ -1,3 +1,2 @@
-// const api = "http://localhost:3000/";
-const api = "https://book-nest-eight.vercel.app/";
+const api = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://book-nest-eight.vercel.app/";
 export default api;
