@@ -2,12 +2,17 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db';
 import userRoutes from './routes/userRoutes';
-
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT;
+
+// Init Middleware
+app.use(bodyParser.json());
+app.use(cors());
 
 // Middleware
 app.use(express.json());
