@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 import Navbar from '../navbar/Navbar';
 import styles from "./Layout.module.css";
+import Footer from '../footer/Footer';
+
 
 
 interface LayoutProps {
@@ -14,6 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <main className={`flex-grow p-4 ${styles.layout}`}>
                 {children}
             </main>
+            <Footer/>
         </div>
     );
 };

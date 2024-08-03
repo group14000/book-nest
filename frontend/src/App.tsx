@@ -13,6 +13,7 @@ const delayImport = <T extends React.ComponentType<any>>(importFunc: () => Promi
 
 const Login = lazy(() => delayImport(() => import('./components/Auth/Login/Login'), 2000));
 const Signup = lazy(() => delayImport(() => import('./components/Auth/signup/Signup'), 2000));
+const HomePage = lazy(() => delayImport(() => import('./components/Home/HomePage'), 2000));
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
       <Layout>
         <Suspense fallback={<div className="flex justify-center items-center h-screen"><LoaderComponent /></div>}>
           <Routes>
+            <Route path='/' element={<HomePage />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
           </Routes>
